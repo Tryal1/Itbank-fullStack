@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/css/app.css" />
+    <title>ITBANK</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="contenedor-nav">
+        <div class="divItbank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-menu-2 hambur"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#2D5D85"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+          <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
+        </div>
+        <nav class="navBar">
+          <a href="#" class="open">Hacete Cliente</a>
+          <a href="#">Online Banking</a>
+        </nav>
+      </div>
+    </header>
+
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide"
+      data-bs-ride="true"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="../static/image/slide1.png"
+            class="d-block w-100"
+            alt="Imagen slider 1"
+          />
+          <div class="carousel-caption carusel-info">
+            <div class="fondo-azul">
+              <h3>
+                ITBANK <br />
+                EN TUS MANOS
+              </h3>
+            </div>
+            <div>
+              <div class="fondo-azul">
+                <h3>ABRÍ TU CUENTA<br />100% GRATAS<br />100% ONLINE</h3>
+              </div>
+              <br />
+              <div class="fondo-dorado">
+                <ul>
+                  <li>DESCUENTOS EXCLUSIVOS</li>
+                  <li>FINANCIOACIONES</li>
+                  <li>ONLINE BANKING</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../static/image/slide1.png"
+            class="d-block w-100"
+            alt="Imagen slider 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../static/image/slide1.png"
+            class="d-block w-100"
+            alt="Imagen slider 3"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="section-tarjetas">
+      <div class="tarjetas">
+        <h3>ITBANK SUELDO</h3>
+        <p>Si cobrás tu sueldo en ITBANK</p>
+        <p>Descubri los feneficios</p>
+        <a class="btn-tarjeta" href="#">Conoce más</a>
+      </div>
+
+      <div class="tarjetas">
+        <h3 class="gold">ITBANK GOLD</h3>
+        <p>Con tu suscripción anual te lo otorgamos de por vida</p>
+        <p>Descubri los feneficios</p>
+        <a class="btn-tarjeta gold" href="#">Acceder</a>
+      </div>
+
+      <div class="tarjetas">
+        <h3 class="black">ITBANK BLACK</h3>
+        <p>Beneficios exclusivos para clientes con antiguedad de +10 años</p>
+        <p>Descubri los feneficios</p>
+        <a class="btn-tarjeta" href="#">Acceder</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="icono">
+        <a href="#"
+          ><img src="../static/image/instagram.png" alt="instagram"
+        /></a>
+        <a href="#"
+          ><img src="../static/image/facebook.png" alt="facebook"
+        /></a>
+        <a href="#"><img src="../static/image/gorjeo.png" alt="twiter" /></a>
+        <a href="#"
+          ><img src="../static/image/linkedin.png" alt="linkedin"
+        /></a>
+      </div>
+      <a href="/"
+        ><img class="itba-img" src="../static/image/itbank.png" alt=""
+      /></a>
+      <div>
+        © 2022 Banco ITBANK S.A. <br />
+        Todos los derechos Reservados.
+      </div>
+    </footer>
+   
+    {% block popUp %} {% include "popUp.html" %} {% endblock %}
+
+    {% block barra %} {% include "barraLateral.html" %} {% endblock %}
+
+    <script src="../static/js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
