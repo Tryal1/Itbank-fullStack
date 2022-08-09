@@ -7,3 +7,12 @@ def home(request):
 
 def prestamos(request):
     return render(request,'prestamos.html')
+
+def atcliente(request):
+    return render(request, 'atCliente.html')
+
+def seguros(request):
+    return render(request, 'seguros.html')
+
+def tarjetas(request):
+    return render(request, 'tarjetas.html')

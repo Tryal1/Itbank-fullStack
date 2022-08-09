@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--apretar "!" + tab y te aparecera lo basico para programar-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atencion al Cliente</title>
+    <link rel="stylesheet" href="../static/css/app.css" />
+  </head>
+  <header class="head">¿En que podemos ayudarle?</header>
+  <body style="background-image: url(/proyect/servicio.jpg)">
+    <!--Hack: div.contenedor#id ejemplo-->
+    <!--div.contenedor#id>ul>li* cantidad de listados + tab -->
+
+    <button class="boton">
+      <div class="contenedor">Contactos de asistencia personal</div>
+    </button>
+
+    <button class="boton">
+      <div class="contenedor">¿Recuperacion de cuenta?</div>
+    </button>
+
+    <div class="contenedor">
+      <button class="boton" type="button" data-bs-toggle="dropdown" id="boton1">
+        Sucursales
+      </button>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <form class="formato">
+      <label class="mensaje"
+        >Si presenta otro problema envielo al personal del ITBANK</label
+      >
+      <br />
+      <textarea
+        class="quejas"
+        name="Quejas"
+        id=""
+        cols="90"
+        rows="7"
+        placeholder="Ayudanos a mejorar"
+        style="font-size: 18px"
+      ></textarea>
+      <br />
+      <input
+        class="envio"
+        type="submit"
+        id="Enviar"
+        value="Enviar"
+        name="enviar"
+      />
+    </form>
+    {% block popUp %} {% include "popUp.html" %} {% endblock %} {% block barra%}
+    {% include "barraLateral.html" %} {% endblock %}
+  </body>
+</html>

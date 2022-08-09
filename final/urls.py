@@ -19,6 +19,9 @@ from itbankFs import views
 
 urlpatterns = [
     path('',views.home),
+    path('atCliente/', views.atcliente),
     path('prestamos/',views.prestamos),
+    path('seguros/', views.seguros),
+    path('tarjetas/', views.tarjetas),
     path('admin/', admin.site.urls),
 ]
