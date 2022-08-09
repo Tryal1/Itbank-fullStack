@@ -1,6 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <!--apretar "!" + tab y te aparecera lo basico para programar-->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,21 +8,35 @@
     <title>Atencion al Cliente</title>
     <link rel="stylesheet" href="../static/css/app.css" />
   </head>
-  <header class="head">¿En que podemos ayudarle?</header>
-  <body style="background-image: url(/proyect/servicio.jpg)">
-    <!--Hack: div.contenedor#id ejemplo-->
-    <!--div.contenedor#id>ul>li* cantidad de listados + tab -->
-
-    <button class="boton">
+  <header class="header-atCl">
+    <div class="contenedor-nav">
+      <div class="divItbank">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2 hambur" width="44"
+          height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2D5D85" fill="none" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+        <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
+      </div>
+      <nav class="navBar">
+        <a href="#" class="open">Hacete Cliente</a>
+        <a href="#">Online Banking</a>
+      </nav>
+    </div>
+  </header>
+  <body class="atencionBody">
+    <button class="botonAC">
       <div class="contenedor">Contactos de asistencia personal</div>
     </button>
-
-    <button class="boton">
+    <button class="botonAC">
       <div class="contenedor">¿Recuperacion de cuenta?</div>
     </button>
 
     <div class="contenedor">
-      <button class="boton" type="button" data-bs-toggle="dropdown" id="boton1">
+      <button class="botonAC" type="button" data-bs-toggle="dropdown">
         Sucursales
       </button>
     </div>
@@ -54,7 +68,23 @@
         name="enviar"
       />
     </form>
-    {% block popUp %} {% include "popUp.html" %} {% endblock %} {% block barra%}
-    {% include "barraLateral.html" %} {% endblock %}
+    <footer class="footer">
+        <div class="icono">
+          <a href="#"><img src="../static/image/instagram.png" alt="instagram" /></a>
+          <a href="#"><img src="../static/image/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="../static/image/gorjeo.png" alt="twiter" /></a>
+          <a href="#"><img src="../static/image/linkedin.png" alt="linkedin" /></a>
+        </div>
+        <a href="/"><img class="itba-img" src="../static/image/itbank.png" alt="" /></a>
+        <div>
+          © 2022 Banco ITBANK S.A. <br /> Todos los derechos Reservados.
+        </div>
+      </footer>
+
+       {% block barra %} {% include "barraLateral.html" %} {% endblock %}
+    
+       {% block popUp %} {% include "popUp.html" %} {% endblock %}
+
+      <script src="../static/js/app.js"></script>
   </body>
 </html>

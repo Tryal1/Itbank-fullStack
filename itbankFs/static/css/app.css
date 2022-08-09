@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Cabin', sans-serif;
 }
 
 * {
@@ -62,7 +63,15 @@ img {
     rgba(255, 249, 219, 0) 82.18%
   );
 }
-
+.header-atCl{
+  padding: 15px 10px;
+  background: linear-gradient(
+    270.01deg,
+    rgba(174, 166, 255, 0.85963) 8.27%,
+    #f2e1ff 100%,
+    rgba(255, 249, 219, 0) 82.18%
+  );
+}
 .contenedor-nav {
   display: flex;
   align-items: center;
@@ -266,6 +275,10 @@ img {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  /* position: absolute; */
+  align-self: flex-end;
+  /* bottom: 0; */
+  width: 100%;
 }
 
 .icono {
@@ -589,7 +602,7 @@ img {
   margin-bottom: 20px;
 }
 
-.boton {
+.botonAC {
   text-align: left;
   width: 85%;
   height: 30px;
@@ -597,7 +610,7 @@ img {
   box-shadow: 2px 2px 2px rgb(161, 149, 149);
 }
 
-.boton:hover {
+.botonAC:hover {
   background-color: rgb(49, 190, 245);
   color: aliceblue;
   transition: all 0.3s;
@@ -618,13 +631,14 @@ img {
   text-align: center;
 }
 
-body {
-  background-repeat: no-repeat;
-  background-size: 100%;
+.atencionBody{
+  margin: 0px;
+  height: 90vh;
+  background-image:url("../image/servicio.jpg");
+  background-size:cover;
 }
 
 .mensaje {
-  background-color: aquamarine;
   font-size: 25px;
   font-family: "Times New Roman", Times, serif;
   color: #000000;
@@ -634,6 +648,7 @@ body {
   width: 100px;
   height: 30px;
   font-size: 20px;
+  margin-bottom: 80px;
 }
 
 .dropdown {
@@ -807,3 +822,4 @@ td:nth-child(3) {
   font-size: 20px;
   margin: 0;
 }
+

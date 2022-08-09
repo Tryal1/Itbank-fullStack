@@ -8,7 +8,7 @@ def home(request):
 def prestamos(request):
     return render(request,'prestamos.html')
 
-def atcliente(request):
+def atCliente(request):
     return render(request, 'atCliente.html')
 
 def seguros(request):
@@ -16,3 +16,9 @@ def seguros(request):
 
 def tarjetas(request):
     return render(request, 'tarjetas.html')
+
+def dolarHoy(request):
+    return render(request,'dolarHoy.html')
+
+def calculadora(request):
+    return render(request, 'calculadora.html')
