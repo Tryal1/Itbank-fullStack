@@ -12,7 +12,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
-    <title>ITBANK</title>
+    <title>ITBANK - Personal & Online Banking</title>
+    <!-- include a png icon so that it is rendered correctly and no tpixelated -->
+    <link rel="icon" href="{% static 'image/favicon.ico' %}" />
   </head>
 
   <body>
@@ -137,17 +139,17 @@
     </div>
 
     <section class="fondo-tarjetas" style="transform: scale(0.9); border-radius: 20px;">
-      <h1 class="titulo-tarjeta">ELEGÍ LA TUYA Y CONOCÉ LOS BENEFICIOS</h1>
+      <h1 class="titulo-tarjeta">¡ELEGÍ TU PLAN Y CONOCÉ LOS BENEFICIOS!</h1>
       <div class="container-tipoTarje">
         <!-- Inicio tarjeta -->
         <div class="tarjeta">
-          <h3>ITBANK PLUS+</h3>
+          <h3>ITBANK CLASSIC</h3>
           <ul>
-            <li>Débito y Crédito</li>
+            <li>Caja de ahorro en pesos</li>
             <li>Servicio de Cuenta</li>
             <li>Super Préstamos</li>
           </ul>
-          <button class="btn-click">Click Acá</button>
+          <button class="btn-click">¡Quiero saber más!</button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-azul.png"
@@ -156,13 +158,13 @@
         </div>
         <!-- Inicio tarjetas -->
         <div class="tarjeta gold">
-          <h3>ITBANK PLUS+</h3>
+          <h3>ITBANK GOLD</h3>
           <ul>
-            <li>Débito y Crédito</li>
+            <li>Caja de ahorro en dolar</li>
             <li>Servicio de Cuenta</li>
-            <li>Super Préstamos</li>
+            <li>Tarjeta internacional</li>
           </ul>
-          <button class="btn-click">Click Acá</button>
+          <button class="btn-click">¡Quiero saber más!</button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-gold.png"
@@ -171,13 +173,13 @@
         </div>
 
         <div class="tarjeta black">
-          <h3>ITBANK PLUS+</h3>
+          <h3>ITBANK BLACK</h3>
           <ul>
-            <li>Débito y Crédito</li>
-            <li>Servicio de Cuenta</li>
-            <li>Super Préstamos</li>
+            <li>Sin límite de extracción</li>
+            <li>5 tarjetas físicas</li>
+            <li>Compra y venta de dólares</li>
           </ul>
-          <button class="btn-click">Click Acá</button>
+          <button class="btn-click">¡Quiero saber más!</button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-black.png"
@@ -209,7 +211,7 @@
       </div>
     </footer>
    
-    {% block popUp %} {% include "popUp.html" %} {% endblock %}
+    {% block login %} {% include "login.html" %} {% endblock %}
 
     {% block barra %} {% include "barraLateral.html" %} {% endblock %}
 

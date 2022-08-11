@@ -1,0 +1,50 @@
+<div class="popUp-container">
+
+    <div class="popUp popUp-close">
+
+        <p class="close">X</p>
+
+        <form action="/register/" method="POST" class="formulario">
+
+            <legend>Register</legend>
+
+            <div class="contenedor-de-cmapos">
+
+                <div class="campo">
+
+                    <input class="imput-text" type="text" placeholder="DNI" name="dni" />
+
+                </div>
+
+                <div class="campo">
+
+                    <input class="imput-text" type="password" placeholder="Nombre de usuario" name="password" />
+
+                </div>
+
+                <div class="campo">
+
+                    <input class="imput-text" type="password" placeholder="Pin" name="pin" />
+
+                </div>
+
+            </div>
+
+
+            {{form.as_p}}
+
+            <div class="enviar">
+
+                <button type="submit" class="btn">Register</button>
+
+            </div>
+
+            <p>¿Olvidaste tu Contraseña?</p>
+
+            <p>Login</p>
+
+        </form>
+
+    </div>
+
+</div>
