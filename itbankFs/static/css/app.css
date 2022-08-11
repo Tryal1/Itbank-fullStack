@@ -80,7 +80,7 @@ img {
   gap: 2rem;
 }
 .contenedor-nav img {
-  width: 252px;
+  width: 200px;
   height: 90px;
 }
 
@@ -823,3 +823,7 @@ td:nth-child(3) {
   margin: 0;
 }
 
+#carouselExampleIndicators > div.carousel-inner {
+
+  margin-top: 4px;
+}
