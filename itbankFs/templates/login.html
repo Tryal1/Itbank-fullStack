@@ -1,21 +1,39 @@
 <div class="popUp-container">
   <div class="popUp popUp-close">
     <p class="close">X</p>
-    <form class="formulario">
+    <form class="formulario" action="" method="POST">
+      {% csrf_token %}
       <legend>Login</legend>
       <div class="contenedor-de-cmapos">
         <div class="campo">
-          <input class="imput-text" type="text" placeholder="DNI" />
+          {{form.dni}}
+          {% comment %} <input
+            class="imput-text"
+            type="text"
+            placeholder="DNI"
+            name="dni"
+            id="id_dni"
+          /> {% endcomment %}
         </div>
         <div class="campo">
+          {{form.password}} {% comment %}
           <input
             class="imput-text"
             type="password"
             placeholder="Nombre de usuario"
+            name="password"
           />
+          {% endcomment %}
         </div>
         <div class="campo">
-          <input class="imput-text" type="password" placeholder="Pin" />
+          {{form.pin}} {% comment %}
+          <input
+            class="imput-text"
+            type="password"
+            placeholder="Pin"
+            name="pin"
+          />
+          {% endcomment %}
         </div>
       </div>
       <div class="enviar">

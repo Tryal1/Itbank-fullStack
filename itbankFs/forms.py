@@ -1,13 +1,10 @@
 from django import forms
 
+
 class loginForm(forms.Form):
-
-    dni = forms.CharField(label='DNI', required=True)
-
-    password = forms.CharField(label='PASSWORD', required=True)
-
-    password = forms.NumberInput(label='PIN', required=True)
-
-    
-
-    
+    dni = forms.CharField(required=True,
+                          widget=forms.TextInput(attrs={'class': 'imput-text', 'placeholder': 'DNI'}))
+    password = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'class': 'imput-text', 'placeholder': 'Password'}))
+    pin = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'class': 'imput-text', 'placeholder': 'Password'}))
