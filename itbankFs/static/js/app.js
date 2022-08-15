@@ -2,6 +2,13 @@ var close = document.querySelector(".close");
 var open = document.querySelector(".open");
 var popUp = document.querySelector(".popUp");
 var popUpContainer = document.querySelector(".popUp-container");
+
+var closeRegister = document.querySelector(".close-register");
+var openRegister = document.querySelector(".registerOpen");
+var popUpContainerRegister = document.querySelector(".popUp-containerRegister");
+var popUpRegister = document.querySelector(".popUp-register");
+
+// lateral
 var lateralInfo = document.querySelector(".lateralInfo");
 var activeLateral = document.querySelector(".hambur");
 var desactivarLateral = document.querySelector(".desactivar");
@@ -26,12 +33,28 @@ open.addEventListener("click", function (e) {
   popUp.classList.toggle("popUp-close");
 });
 
+openRegister.addEventListener("click", function (e) {
+  e.preventDefault();
+  popUpContainerRegister.style.opacity = "1";
+  popUpContainerRegister.style.visibility = "visible";
+  popUpRegister.classList.toggle("popUp-closeRegister");
+});
+
 close.addEventListener("click", function (e) {
   e.preventDefault();
   popUp.classList.toggle("popUp-close");
   setTimeout(() => {
     popUpContainer.style.opacity = "0";
     popUpContainer.style.visibility = "hidden";
+  }, 320);
+});
+
+closeRegister.addEventListener("click", function (e) {
+  e.preventDefault();
+  popUpRegister.classList.toggle("popUp-closeRegister");
+  setTimeout(() => {
+    popUpContainerRegister.style.opacity = "0";
+    popUpContainerRegister.style.visibility = "hidden";
   }, 320);
 });
 

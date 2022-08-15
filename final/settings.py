@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'itbankFs',
-    'itbankFs.models',
+    # 'itbankFs.models',
 ]
 
 MIDDLEWARE = [

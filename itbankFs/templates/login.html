@@ -5,42 +5,15 @@
       {% csrf_token %}
       <legend>Login</legend>
       <div class="contenedor-de-cmapos">
-        <div class="campo">
-          {{form.dni}}
-          {% comment %} <input
-            class="imput-text"
-            type="text"
-            placeholder="DNI"
-            name="dni"
-            id="id_dni"
-          /> {% endcomment %}
-        </div>
-        <div class="campo">
-          {{form.password}} {% comment %}
-          <input
-            class="imput-text"
-            type="password"
-            placeholder="Nombre de usuario"
-            name="password"
-          />
-          {% endcomment %}
-        </div>
-        <div class="campo">
-          {{form.pin}} {% comment %}
-          <input
-            class="imput-text"
-            type="password"
-            placeholder="Pin"
-            name="pin"
-          />
-          {% endcomment %}
-        </div>
+        <div class="campo">{{form.user}}</div>
+        <div class="campo">{{form.password}}</div>
+        <div class="campo">{{form.pin}}</div>
       </div>
       <div class="enviar">
         <button class="btn">Login</button>
       </div>
-      <p>¿Olvidaste tu Contraseña?</p>
-      <p>Register</p>
+      {% comment %} <p>¿Olvidaste tu Contraseña?</p> {% endcomment %}
+      {% comment %} <p>Register</p> {% endcomment %}
     </form>
   </div>
 </div>

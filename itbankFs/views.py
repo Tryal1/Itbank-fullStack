@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .forms import loginForm
+from .forms import loginForm,RegisterForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -9,31 +9,44 @@ from django.views.decorators.cache import cache_control
 
 
 # Create your views here.
-form = loginForm()
+formLogin = loginForm()
+formRegister = RegisterForm()
 
+
+print(authenticate,'aca')
 
 def home(request):
-    return render(request, 'index.html', {'form': form})
+    userComplete = None
+    if request.method == 'POST':
+        user = request.POST.get('user')
+        password = request.POST.get('password')
+        pin = request.POST.get('pin')
+        userComplete = authenticate(request,user=user,password=password,pin=pin)
+    if userComplete is not None:
+        print('login')
+    else:
+        print('login_required')
+    return render(request, 'index.html', {'form': formLogin,'formRegister':formRegister})
 
 
 def prestamos(request):
-    return render(request, 'prestamos.html', {'form': form})
+    return render(request, 'prestamos.html', {'form': formLogin})
 
 
 def atCliente(request):
-    return render(request, 'atCliente.html', {'form': form})
+    return render(request, 'atCliente.html', {'form': formLogin})
 
 
 def seguros(request):
-    return render(request, 'seguros.html', {'form': form})
+    return render(request, 'seguros.html', {'form': formLogin})
 
 
 def tarjetas(request):
-    return render(request, 'tarjetas.html', {'form': form})
+    return render(request, 'tarjetas.html', {'form': formLogin})
 
 
 def dolarHoy(request):
-    return render(request, 'dolarHoy.html', {'form': form})
+    return render(request, 'dolarHoy.html', {'form': formLogin})
 
 
 def calculadora(request):

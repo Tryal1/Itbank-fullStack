@@ -11,7 +11,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css" />
     <title>ITBANK - Personal & Online Banking</title>
     <!-- include a png icon so that it is rendered correctly and no tpixelated -->
     <link rel="icon" href="{% static 'image/IB-icon.png'%}" />
@@ -40,8 +40,8 @@
           <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
         </div>
         <nav class="navBar">
-          <a href="#" class="open" style="cursor: pointer;">Hacete Cliente</a>
-          <a href="#">Online Banking</a>
+          <a class="registerOpen" style="cursor: pointer">Hacete Cliente</a>
+          <a class="open" style="cursor: pointer">Online Banking</a>
         </nav>
       </div>
     </header>
@@ -137,7 +137,10 @@
       </button>
     </div>
 
-    <section class="fondo-tarjetas" style="transform: scale(0.9); border-radius: 20px;">
+    <section
+      class="fondo-tarjetas"
+      style="transform: scale(0.9); border-radius: 20px"
+    >
       <h1 class="titulo-tarjeta">¡ELEGÍ TU PLAN Y CONOCÉ LOS BENEFICIOS!</h1>
       <div class="container-tipoTarje">
         <!-- Inicio tarjeta -->
@@ -148,7 +151,9 @@
             <li>Servicio de Cuenta</li>
             <li>Super Préstamos</li>
           </ul>
-          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
+          <button class="btn-click">
+            <a href="/cuentas">¡Quiero saber más!</a>
+          </button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-azul.png"
@@ -163,7 +168,9 @@
             <li>Servicio de Cuenta</li>
             <li>Tarjeta internacional</li>
           </ul>
-          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
+          <button class="btn-click">
+            <a href="/cuentas">¡Quiero saber más!</a>
+          </button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-gold.png"
@@ -178,7 +185,9 @@
             <li>5 tarjetas físicas</li>
             <li>Compra y venta de dólares</li>
           </ul>
-          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
+          <button class="btn-click">
+            <a href="/cuentas">¡Quiero saber más!</a>
+          </button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-black.png"
@@ -209,10 +218,10 @@
         Todos los derechos Reservados.
       </div>
     </footer>
-   
-   {% include "login.html" %}
 
-    {% block barra %} {% include "barraLateral.html" %} {% endblock %}
+    {% include "login.html" %}
+    {% include "register.html" %} 
+    {% block barra %} {% include "barraLateral.html" %} {%endblock %}
 
     <script src="../static/js/app.js"></script>
     <script

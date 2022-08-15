@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 body {
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 
 * {
@@ -64,7 +64,7 @@ img {
     rgba(255, 249, 219, 0) 82.18%
   );
 }
-.header-atCl{
+.header-atCl {
   padding: 15px 10px;
   background: linear-gradient(
     270.01deg,
@@ -121,7 +121,34 @@ img {
   align-items: center;
 }
 
+.popUp-containerRegister {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .popUp {
+  position: relative;
+  width: 25%;
+  /* width: 480px; */
+  width: 400px;
+  height: 65%;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+}
+
+.popUp-register{
   position: relative;
   width: 25%;
   /* width: 480px; */
@@ -137,7 +164,25 @@ img {
   transform: perspective(50px) translateZ(-100px);
 }
 
+.popUp-closeRegister {
+  transform: perspective(50px) translateZ(-100px);
+}
+
 .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  line-height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgb(230, 16, 16);
+}
+
+.close-register {
   position: absolute;
   right: 5px;
   top: 5px;
@@ -405,7 +450,7 @@ img {
   margin-top: 30px;
   z-index: 1000;
 }
-.btn-click:hover{
+.btn-click:hover {
   color: white;
   transition: all 0.5s;
   transform: scale(1.1);
@@ -641,11 +686,11 @@ img {
   text-align: center;
 }
 
-.atencionBody{
+.atencionBody {
   margin: 0px;
   height: 90vh;
-  background-image:url("../image/servicio.jpg");
-  background-size:cover;
+  background-image: url("../image/servicio.jpg");
+  background-size: cover;
 }
 
 .mensaje {
@@ -837,9 +882,9 @@ td:nth-child(3) {
   margin-top: 4px;
 }
 
-.tipos-cuentas{
+.tipos-cuentas {
   margin-top: 50px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -847,40 +892,48 @@ td:nth-child(3) {
   background-color: #e7e7e7;
 }
 
-.div{
+.div {
   width: 75%;
   height: 300px;
   margin: 20px 40px 20px 10px;
-  border-radius: 15px;  
+  border-radius: 15px;
   background-size: cover;
   background-position: center;
   box-shadow: rgba(0, 0, 0, 0.627) 7px 5px 15px;
-
 }
 
-.cuentaClassic{
+.cuentaClassic {
   background-image: url(../image/cuenta-classic.png);
 }
-.cuentaClassic:hover{
-  background-image: linear-gradient(rgba(3, 29, 100, 0.738), rgba(255, 253, 253, 0.5));
+.cuentaClassic:hover {
+  background-image: linear-gradient(
+    rgba(3, 29, 100, 0.738),
+    rgba(255, 253, 253, 0.5)
+  );
 }
-.cuentaGold{
+.cuentaGold {
   background-image: url(../image/cuenta-gold.png);
 }
-.cuentaGold:hover{
-  background-image: linear-gradient(rgba(238, 198, 0, 0.738), rgba(255, 253, 253, 0.5));
+.cuentaGold:hover {
+  background-image: linear-gradient(
+    rgba(238, 198, 0, 0.738),
+    rgba(255, 253, 253, 0.5)
+  );
 }
-.cuentaBlack{
+.cuentaBlack {
   background-image: url(../image/cuenta-black.png);
 }
-.cuentaBlack:hover{
-  background-image: linear-gradient(rgba(46, 46, 46, 0.712), rgba(255, 253, 253, 0.5));
+.cuentaBlack:hover {
+  background-image: linear-gradient(
+    rgba(46, 46, 46, 0.712),
+    rgba(255, 253, 253, 0.5)
+  );
 }
 
-.text{
+.text {
   visibility: hidden;
 }
-.div:hover{
+.div:hover {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -896,7 +949,7 @@ td:nth-child(3) {
   line-height: 40px;
   color: black;
 }
- .btn-cuenta{
+.btn-cuenta {
   font-size: 16px;
   width: 200px;
   height: 80px;
@@ -904,22 +957,21 @@ td:nth-child(3) {
   border-radius: 15px;
   padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.627) 7px 5px 15px;
- }
+}
 
-.btn-cuenta:hover{
+.btn-cuenta:hover {
   transition: all 0.5s;
   transform: scale(1.1);
   color: white;
 }
 
-.btn-cl:hover{
+.btn-cl:hover {
   background-color: rgba(46, 46, 179, 0.659);
 }
-.btn-gl:hover{
-  color: black ;
+.btn-gl:hover {
+  color: black;
   background-color: rgba(238, 198, 0, 0.507);
 }
-.btn-bl:hover{
+.btn-bl:hover {
   background-color: rgba(46, 46, 46, 0.712);
-
 }
