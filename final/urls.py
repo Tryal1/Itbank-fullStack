@@ -25,5 +25,7 @@ urlpatterns = [
     path('tarjetas/', views.tarjetas),
     path('dolarHoy/', views.dolarHoy),
     path('calculadora/', views.calculadora),
+    path('clientes/', views.clientes),
+    path('cuentas/', views.cuentas),
     path('admin/', admin.site.urls),
 ]

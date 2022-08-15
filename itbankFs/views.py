@@ -38,3 +38,9 @@ def dolarHoy(request):
 
 def calculadora(request):
     return render(request, 'calculadora.html')
+
+def clientes(request):
+    return render(request, 'clientes.html')
+
+def cuentas(request):
+    return render(request, 'cuentas.html')

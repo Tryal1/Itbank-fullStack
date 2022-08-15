@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
     <title>ITBANK - Personal & Online Banking</title>
     <!-- include a png icon so that it is rendered correctly and no tpixelated -->
-    <link rel="icon" href="{% static 'image/favicon.ico' %}" />
+    <link rel="icon" href="{% static 'image/IB-icon.png'%}" />
   </head>
-
   <body>
     <header class="header">
       <div class="contenedor-nav">
@@ -41,7 +40,7 @@
           <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
         </div>
         <nav class="navBar">
-          <a class="open">Hacete Cliente</a>
+          <a href="#" class="open" style="cursor: pointer;">Hacete Cliente</a>
           <a href="#">Online Banking</a>
         </nav>
       </div>
@@ -77,6 +76,13 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
+            src="../static/image/letras-carrousel.png"
+            class="d-block w-100"
+            alt="Imagen slider 2"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
             src="../static/image/slide1.png"
             class="d-block w-100"
             alt="Imagen slider 1"
@@ -105,14 +111,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="../static/image/slide1.png"
-            class="d-block w-100"
-            alt="Imagen slider 2"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../static/image/slide1.png"
+            src="../static/image/tarjetas-carrousel.png"
             class="d-block w-100"
             alt="Imagen slider 3"
           />
@@ -149,7 +148,7 @@
             <li>Servicio de Cuenta</li>
             <li>Super Préstamos</li>
           </ul>
-          <button class="btn-click">¡Quiero saber más!</button>
+          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-azul.png"
@@ -164,7 +163,7 @@
             <li>Servicio de Cuenta</li>
             <li>Tarjeta internacional</li>
           </ul>
-          <button class="btn-click">¡Quiero saber más!</button>
+          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-gold.png"
@@ -179,7 +178,7 @@
             <li>5 tarjetas físicas</li>
             <li>Compra y venta de dólares</li>
           </ul>
-          <button class="btn-click">¡Quiero saber más!</button>
+          <button class="btn-click"><a href="/cuentas">¡Quiero saber más!</a></button>
           <img
             class="imgPosition"
             src="../static/image/tarjeta-black.png"

@@ -35,28 +35,26 @@
             <div class="accordion-body">
             <ul class="acordionUl" id="accordionPersona">
                 <li>
-                <h2 class="accordion-header" id="flush-headCuenta">
-                    <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-cuenta"
-                    aria-expanded="false"
-                    aria-controls="flush-cuenta"
-                    >
-                    Clientes
-                    </button>
-                </h2>
-                <div
-                    id="flush-cuenta"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="flush-headCuenta"
-                    data-bs-parent="#accordionPersona"
-                >
-                    <div class="accordion-body">
-                    <a href="">Operaciones</a></div>
-                </div>
-                </li>
+                    <h2 class="accordion-header" id="flush-headclientes">
+                        <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-clientes"
+                        aria-expanded="false"
+                        aria-controls="flush-clientes"
+                        >
+                        Clientes
+                        </button>
+                    </h2>
+                    <div
+                        id="flush-clientes"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headclientes"
+                        data-bs-parent="#accordionPersona">
+                        <div class="accordion-body"><a href="/clientes">Clientes</a><a href="/cuentas">Cuentas</a></div>
+                    </div>
+                    </li>
                 <li>
                 <h2 class="accordion-header" id="flush-headtarjetas">
                     <button
@@ -169,7 +167,7 @@
                         aria-labelledby="flush-headConsultas"
                         data-bs-parent="#accordionPersona"
                     >
-                        <div class="accordion-body"><a href="/atCliente">Atencion al Cliente</a><a href="">SQL Queries</a></div>
+                        <div class="accordion-body"><a href="/atCliente">Atencion al Cliente</a></div>
                     </div>
                     </li>
             </ul>
