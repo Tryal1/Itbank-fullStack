@@ -17,7 +17,6 @@ formRegister = RegisterForm()
 
 
 def home(request):
-    print(request)
     if request.method == 'POST':
 
         # dentro del template del form, está el nombre "register" dentro del submit del form
@@ -73,32 +72,32 @@ def home(request):
 
 def prestamos(request):
     prestamos = Prestamos()
-    return render(request, 'prestamos.html', {'form': formLogin, 'prestamos': prestamos})
+    return render(request, 'prestamos.html', {'form': formLogin, 'formRegister': formRegister, 'prestamos': prestamos})
 
 
 def atCliente(request):
-    return render(request, 'atCliente.html', {'form': formLogin})
+    return render(request, 'atCliente.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def seguros(request):
-    return render(request, 'seguros.html', {'form': formLogin})
+    return render(request, 'seguros.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def tarjetas(request):
-    return render(request, 'tarjetas.html', {'form': formLogin})
+    return render(request, 'tarjetas.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def dolarHoy(request):
-    return render(request, 'dolarHoy.html', {'form': formLogin})
+    return render(request, 'dolarHoy.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def calculadora(request):
-    return render(request, 'calculadora.html')
+    return render(request, 'calculadora.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def clientes(request):
-    return render(request, 'clientes.html')
+    return render(request, 'clientes.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def cuentas(request):
-    return render(request, 'cuentas.html')
+    return render(request, 'cuentas.html', {'form': formLogin, 'formRegister': formRegister})
