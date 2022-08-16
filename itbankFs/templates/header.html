@@ -22,15 +22,16 @@
       </div>
       <nav class="navBar">
         {%if user.is_authenticated %}
+        <p class="login">Hola {{user.username}}!</p>
+        <button name="logaut" class="logOut-header">Homebanking</button>
         <form method="POST">
           {% csrf_token %}
-          <button name="logaut" style="cursor: pointer">Logaut</button>
+          <button name="logaut" class="logOut-header">Cerrar Sesión</button>
         </form>
-        <p>Hola {{user.username}}</p>
         {%else%}
-        <a class="registerOpen" style="cursor: pointer">Hacete Cliente</a>
-        <a class="open" style="cursor: pointer">Online Banking</a>
+        <a class="registerOpen">Hacete Cliente</a>
+        <a class="open">Iniciar Sesión</a>
         {%endif%}
-      </nav>
+
     </div>
   </header>
