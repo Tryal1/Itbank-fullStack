@@ -90,18 +90,32 @@ img {
   align-items: center;
   gap: 2rem;
 }
-
 .navBar {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 .navBar a {
-  padding: 5px 5px;
+  padding: 5px 10px;
   border-radius: 100px;
   background: #ffffff;
   box-shadow: -1px 5px 8px 0px rgba(68, 72, 81, 0.3490196078);
 }
+.navBar p{
+  align-self: center;
+  margin-top: 15px;
+  font-size: 20px;
+}
+.login{
+  font-size: 17px;
 
+}
+.logOut-header{
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.577);
+  font-size: 16px;
+}
 .hambur {
   cursor: pointer;
 }
@@ -141,7 +155,7 @@ img {
   width: 25%;
   /* width: 480px; */
   width: 400px;
-  height: 65%;
+  height: fit-content;
   background-color: #fff;
   overflow: hidden;
   border-radius: 10px;
@@ -153,7 +167,7 @@ img {
   width: 25%;
   /* width: 480px; */
   width: 400px;
-  height: 65%;
+  height: fit-content;
   background-color: #fff;
   overflow: hidden;
   border-radius: 10px;

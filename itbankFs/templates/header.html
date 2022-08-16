@@ -22,14 +22,14 @@
       </div>
       <nav class="navBar">
         {%if user.is_authenticated %}
+        <p class="username-header">Hola {{user.username}}!</p>
         <form method="POST">
           {% csrf_token %}
-          <button name="logaut" style="cursor: pointer">Logaut</button>
+          <button name="logaut" style="cursor: pointer" class="logOut-header">Cerrar Sesión</button>
         </form>
-        <p>Hola {{user.username}}</p>
         {%else%}
         <a class="registerOpen" style="cursor: pointer">Hacete Cliente</a>
-        <a class="open" style="cursor: pointer">Online Banking</a>
+        <a class="open login" style="cursor: pointer">Iniciar sesión</a>
         {%endif%}
       </nav>
     </div>
