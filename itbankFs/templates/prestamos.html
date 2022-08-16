@@ -11,7 +11,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css" />
     <link rel="icon" href="{% static 'image/IB-icon.png'%}" />
     <title>ITBANK - Préstamos</title>
   </head>
@@ -39,7 +39,7 @@
           <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
         </div>
         <nav class="navBar">
-          <a href="#" class="open" style="cursor: pointer;">Hacete Cliente</a>
+          <a href="#" class="open" style="cursor: pointer">Hacete Cliente</a>
           <a href="#">Online Banking</a>
         </nav>
       </div>
@@ -93,6 +93,22 @@
           </ul>
           <a href="">Conoce más</a>
         </div>
+      </div>
+
+      <div>
+        <form class="formulario" action="" method="POST">
+          {% csrf_token %}
+          <legend>Pedir prestamos</legend>
+          <div class="contenedor-de-cmapos">
+            <div class="campo">{{prestamos.cantidad}}</div>
+            <div class="campo">{{prestamos.motivo}}</div>
+            <div class="campo">{{prestamos.dni}}</div>
+          </div>
+          <div class="campo">{{prestamos.pin}}</div>
+          <div class="enviar">
+            <button class="btn">Solicitar</button>
+          </div>
+        </form>
       </div>
     </main>
 

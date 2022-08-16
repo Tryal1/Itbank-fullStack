@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .forms import loginForm,RegisterForm
+from .forms import loginForm,RegisterForm,Prestamos
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -30,7 +30,8 @@ def home(request):
 
 
 def prestamos(request):
-    return render(request, 'prestamos.html', {'form': formLogin})
+    prestamos = Prestamos()
+    return render(request, 'prestamos.html', {'form': formLogin,'prestamos':prestamos})
 
 
 def atCliente(request):
