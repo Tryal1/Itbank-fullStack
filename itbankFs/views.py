@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.contrib.auth.models import User
 
-from .forms import loginForm,RegisterForm,Prestamos
+from .forms import loginForm, RegisterForm, Prestamos
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -17,7 +17,7 @@ formRegister = RegisterForm()
 
 
 def home(request):
-
+    print(request)
     if request.method == 'POST':
 
         # dentro del template del form, está el nombre "register" dentro del submit del form
@@ -42,11 +42,10 @@ def home(request):
 
             else:
 
-
                 messages.error(request, 'Pin incorrecto')
 
                 return HttpResponseRedirect('')
-        
+
         # si se completó el formulario de login
         if 'login' in request.POST:
 
@@ -58,19 +57,23 @@ def home(request):
 
                 login(request, user)
 
-                return HttpResponseRedirect('')
+                return HttpResponseRedirect('/')
 
             else:
 
                 messages.error(request, 'Usuario o contraseña incorrectos')
-                return HttpResponseRedirect('')
-                
-    return render(request, 'index.html', {'form': formLogin,'formRegister':formRegister})
+                return HttpResponseRedirect('/')
+
+        if 'logaut' in request.POST:
+            logout(request)
+            return HttpResponseRedirect('/')
+
+    return render(request, 'index.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def prestamos(request):
     prestamos = Prestamos()
-    return render(request, 'prestamos.html', {'form': formLogin,'prestamos':prestamos})
+    return render(request, 'prestamos.html', {'form': formLogin, 'prestamos': prestamos})
 
 
 def atCliente(request):
@@ -92,8 +95,10 @@ def dolarHoy(request):
 def calculadora(request):
     return render(request, 'calculadora.html')
 
+
 def clientes(request):
     return render(request, 'clientes.html')
+
 
 def cuentas(request):
     return render(request, 'cuentas.html')

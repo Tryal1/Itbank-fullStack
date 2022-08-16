@@ -40,8 +40,16 @@
           <a href="/"><img src="../static/image/itbank.png" alt="" /></a>
         </div>
         <nav class="navBar">
+          {%if user.is_authenticated %}
+          <form method="POST">
+            {% csrf_token %}
+            <button name="logaut" style="cursor: pointer">Logaut</button>
+          </form>
+          <p>Hola {{user.username}}</p>
+          {%else%}
           <a class="registerOpen" style="cursor: pointer">Hacete Cliente</a>
           <a class="open" style="cursor: pointer">Online Banking</a>
+          {%endif%}
         </nav>
       </div>
     </header>
@@ -219,9 +227,8 @@
       </div>
     </footer>
 
-    {% include "login.html" %}
-    {% include "register.html" %} 
-    {% block barra %} {% include "barraLateral.html" %} {%endblock %}
+    {% include "login.html" %} {% include "register.html" %} {% block barra %}
+    {% include "barraLateral.html" %} {%endblock %}
 
     <script src="../static/js/app.js"></script>
     <script
