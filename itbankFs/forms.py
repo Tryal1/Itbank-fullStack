@@ -16,8 +16,8 @@ class RegisterForm(forms.Form):
         attrs={'class': 'imput-text', 'placeholder': 'Password'}))
     password2 = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'class': 'imput-text', 'placeholder': 'Repeat Password'}))
-    pin = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'class': 'imput-text', 'placeholder': 'Pin'}))
+    email = forms.CharField(required=True, widget=forms.TextInput(
+        attrs={'class': 'imput-text', 'placeholder': 'email'}))
     
     
 class Prestamos(forms.Form):
