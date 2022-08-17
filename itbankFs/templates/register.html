@@ -5,7 +5,10 @@
       {% csrf_token %}
       <legend>Registrarse</legend>
       <div class="contenedor-de-cmapos">
-        <div class="campo">{{formRegister.user}}</div>
+        <div class="campo">{{formRegister.dni}}</div>
+        <div class="campo">{{formRegister.first_name}}</div>
+        <div class="campo">{{formRegister.last_name}}</div>
+        <div class="campo">{{formRegister.email}}</div>
          <div class="campo">{{formRegister.password}}</div>
         <div class="campo">{{formRegister.password2}}</div>
       </div>
