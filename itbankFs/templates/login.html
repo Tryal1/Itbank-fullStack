@@ -3,7 +3,7 @@
     <p class="close">X</p>
     <form class="formulario" action="" method="POST">
       {% csrf_token %}
-      <legend>Login</legend>
+      <legend>Iniciar Sesión</legend>
       <div class="contenedor-de-cmapos">
         <div class="campo">{{form.dni}}</div>
         <div class="campo">{{form.password}}</div>
@@ -11,8 +11,6 @@
       <div class="enviar">
         <button class="btn" name="login">Login</button>
       </div>
-      {% comment %} <p>¿Olvidaste tu Contraseña?</p> {% endcomment %}
-      {% comment %} <p>Register</p> {% endcomment %}
     </form>
   </div>
 </div>
