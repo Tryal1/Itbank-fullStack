@@ -16,7 +16,12 @@ formLogin = loginForm()
 formRegister = RegisterForm()
 
 
-def home(request):
+from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+
+
+def userAction(request):
     if request.method == 'POST':
 
         # dentro del template del form, está el nombre "register" dentro del submit del form
@@ -43,7 +48,7 @@ def home(request):
 
                 messages.error(request, 'Pin incorrecto')
 
-                return HttpResponseRedirect('')
+                return HttpResponseRedirect('/')
 
         # si se completó el formulario de login
         if 'login' in request.POST:
@@ -67,37 +72,48 @@ def home(request):
             logout(request)
             return HttpResponseRedirect('/')
 
+
+def home(request):
+    userAction(request)
     return render(request, 'index.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def prestamos(request):
     prestamos = Prestamos()
+    userAction(request)
     return render(request, 'prestamos.html', {'form': formLogin, 'formRegister': formRegister, 'prestamos': prestamos})
 
 
 def atCliente(request):
+    userAction(request)
     return render(request, 'atCliente.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def seguros(request):
+    userAction(request)
     return render(request, 'seguros.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def tarjetas(request):
+    userAction(request)
     return render(request, 'tarjetas.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def dolarHoy(request):
+    userAction(request)
     return render(request, 'dolarHoy.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def calculadora(request):
+    userAction(request)
     return render(request, 'calculadora.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def clientes(request):
+    userAction(request)
     return render(request, 'clientes.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def cuentas(request):
+    userAction(request)
     return render(request, 'cuentas.html', {'form': formLogin, 'formRegister': formRegister})
