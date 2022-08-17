@@ -5,16 +5,17 @@
       {% csrf_token %}
       <legend>Register</legend>
       <div class="contenedor-de-cmapos">
-        <div class="campo">{{formRegister.user}}</div>
+        <div class="campo">{{formRegister.dni}}</div>
+        <div class="campo">{{formRegister.first_name}}</div>
+        <div class="campo">{{formRegister.last_name}}</div>
+        <div class="campo">{{formRegister.email}}</div>
          <div class="campo">{{formRegister.password}}</div>
         <div class="campo">{{formRegister.password2}}</div>
+        
       </div>
-      <div class="campo">{{formRegister.email}}</div>
       <div class="enviar">
         <button class="btn" name = "register">Register</button>
       </div>
-      {% comment %} <p>¿Olvidaste tu Contraseña?</p> {% endcomment %}
-      {% comment %} <p>Login</p>  {% endcomment %}
     </form>
   </div>
 </div>

@@ -28,16 +28,19 @@ def userAction(request):
         # de esta manera podemos diferenciar cuál es el formulario que se está enviando
         if 'register' in request.POST:
 
-            user = request.POST['user']
+            dni = request.POST['dni']
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            email = request.POST['email']
             password = request.POST['password']
             password2 = request.POST['password2']
-            email = request.POST['email']
 
             # se chequea que las contraseñas coincidan
             if password == password2:
 
                 # se crea el usuario con los datos ingresados
-                user = User.objects.create_user(user, email, password)
+                # user = User.objects.create_user()
+                user = User.objects.create_user(username=dni, first_name=first_name,last_name=last_name, email=email,password=password)
                 user.save()
 
                 messages.success(request, 'Usuario creado correctamente')
@@ -53,9 +56,9 @@ def userAction(request):
         # si se completó el formulario de login
         if 'login' in request.POST:
 
-            user = request.POST['user']
+            dni = request.POST['dni']
             password = request.POST['password']
-            user = authenticate(username=user, password=password)
+            user = authenticate(username=dni, password=password)
 
             if user is not None and password is not None:
 

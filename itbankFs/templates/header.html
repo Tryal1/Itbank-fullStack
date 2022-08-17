@@ -26,7 +26,7 @@
         {% csrf_token %}
         <button name="logaut" style="cursor: pointer">Logaut</button>
       </form>
-      <p>Hola {{user.username}}</p>
+      <p>Hola {{user.first_name}}</p>
       {%else%}
       <a class="registerOpen" style="cursor: pointer">Hacete Cliente</a>
       <a class="open" style="cursor: pointer">Online Banking</a>
