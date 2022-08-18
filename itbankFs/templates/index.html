@@ -18,6 +18,15 @@
   </head>
   <body>
     {% include "header.html" %}
+    <!-- if there is  message display it -->
+    {% for message in messages %}
+    
+    <div class="alert alert-error">
+        <a class="close" href="#" data-dismiss="alert"></a>
+           {{ message }}
+    </div>
+
+    {% endfor %}
 
     <div
       id="carouselExampleIndicators"

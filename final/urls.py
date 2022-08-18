@@ -28,4 +28,5 @@ urlpatterns = [
     path('clientes/', views.clientes),
     path('cuentas/', views.cuentas),
     path('admin/', admin.site.urls),
+    path('homebanking/', views.homebanking),
 ]

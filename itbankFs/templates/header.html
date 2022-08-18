@@ -22,8 +22,8 @@
       </div>
       <nav class="navBar">
         {%if user.is_authenticated %}
-        <p class="login">Hola {{user.first_name}}!</p>
-        <button name="logaut" class="logOut-header">Homebanking</button>
+        <p class="login">¡Hola {{user.first_name}}!</p>
+        <a name="logaut" class="logOut-header" href="/homebanking">Homebanking</a>
         <form method="POST">
           {% csrf_token %}
           <button name="logaut" class="logOut-header">Cerrar Sesión</button>

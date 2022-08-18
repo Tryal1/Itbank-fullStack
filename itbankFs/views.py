@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from django.contrib.auth.models import User
 
+
 from .forms import loginForm, RegisterForm, Prestamos
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -49,7 +50,7 @@ def userLogin(request):
 
                 messages.error(request, 'Pin incorrecto')
 
-                return HttpResponseRedirect('')
+                return HttpResponseRedirect('/')
 
         # si se completó el formulario de login
         if 'login' in request.POST:
@@ -86,12 +87,11 @@ def prestamos(request):
         user = Cliente.objects.get(
             customer_dni=User.get_username(request.user))
         tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
-        match tarjeta.client_type:
-            case 'CLASSIC':
+        if tarjeta.client_type == 'CLASSIC':
                 limit = '100000'
-            case 'GOLD':
+        elif  tarjeta.client_type == 'GOLD':
                 limit = '300000'
-            case 'BLACK':
+        elif  tarjeta.client_type == 'BLACK':
                 limit = '500000'
         if request.method == 'POST':
             cantidad = request.POST['cantidad']
@@ -151,3 +151,49 @@ def clientes(request):
     else:
         context = {}
     return render(request, 'clientes.html', {'form': formLogin, 'formRegister': formRegister, 'context': context})
+
+@login_required
+def homebanking(request):
+    
+    prestamos = Prestamos()
+    userLogin(request)
+    if request.user.is_authenticated:
+
+        user = Cliente.objects.get(customer_dni=User.get_username(request.user))
+        tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
+
+        if tarjeta.client_type == 'CLASSIC':
+                limit = '100000'
+
+        elif tarjeta.client_type == 'GOLD':
+                limit = '300000'
+
+        elif tarjeta.client_type == 'GOLD':
+                limit = '500000'
+
+        if request.method == 'POST':
+            cantidad = request.POST['cantidad']
+            motivo = request.POST['motivo']
+
+            if cantidad >= limit:
+                    print('La cantidad supera el limite')
+                    messages.error(request, 'La cantidad solicitada supera el limite. Por favor intente con una cantidad menor, o suba su plan')
+                    return HttpResponseRedirect('/homebanking')
+            else:
+                messages.success(request, '¡Prestamo aprobado!')
+                return HttpResponseRedirect('/homebanking')
+
+        user = Cliente.objects.get(customer_dni=User.get_username(request.user))
+        cuenta = Cuenta.objects.get(account_id=user.customer_id)
+        tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
+        # print(tarjeta)
+        context = {
+            "user": user,
+            "cuenta": cuenta,
+            'tarjeta': tarjeta,
+        }
+
+    else:
+        context = {}
+
+    return render(request, 'homebanking.html', {'context': context, 'prestamos': prestamos})
