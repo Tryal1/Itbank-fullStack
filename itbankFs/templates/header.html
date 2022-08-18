@@ -22,7 +22,7 @@
       </div>
       <nav class="navBar">
         {%if user.is_authenticated %}
-        <p class="login">Hola {{user.username}}!</p>
+        <p class="login">Hola {{user.first_name}}!</p>
         <button name="logaut" class="logOut-header">Homebanking</button>
         <form method="POST">
           {% csrf_token %}
