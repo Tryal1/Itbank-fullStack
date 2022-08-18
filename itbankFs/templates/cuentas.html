@@ -11,51 +11,60 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css" />
     <title>ITBANK - Cuentas</title>
     <link rel="icon" href="{% static 'image/IB-icon.png'%}" />
   </head>
   <body>
     {% include "header.html" %}
-    
+
     <section class="seccion-fotoarriba">
-      <img src="../static/image/flyer-cuentas.png" alt="portadaCuentas">
+      <img src="../static/image/flyer-cuentas.png" alt="portadaCuentas" />
     </section>
 
     <section class="tipos-cuentas">
       <div class="cuentaClassic div">
         <div class="text text-classic">
-          <p>Si adquiris una cuenta Classic inmediatamente obtendrás: <br> 
-          Una tarjeta de crédito, una caja de ahorro en pesos <br>
-          la posibilidad de retirar hasta $10.000 pesos diarios <br>
-          con una pequeña comisión de 1% por transferencia <br> 
-          que podrán ser de hasta $150.000 pesos.  </p> 
-        </div></div>
-        <button class="btn-cuenta btn-cl">Quiero ser Classic</button>
+          <p>
+            Si adquiris una cuenta Classic inmediatamente obtendrás: <br />
+            Una tarjeta de crédito, una caja de ahorro en pesos <br />
+            la posibilidad de retirar hasta $10.000 pesos diarios <br />
+            con una pequeña comisión de 1% por transferencia <br />
+            que podrán ser de hasta $150.000 pesos.
+          </p>
+        </div>
+      </div>
+      <button class="btn-cuenta btn-cl">Quiero ser Classic</button>
       <div class="cuentaGold div">
         <div class="text text-gold">
-          <p>Si adquiris una cuenta Gold inmediatamente obtendrás: <br> 
-            Una tarjeta de crédito, una caja de ahorro en pesos y dólares, <br>
-            una cuenta corriente y una chequera. Además, contarás con <br>
-            la posibilidad de retirar hasta $20.000 pesos diarios <br>
-            con una mínima comisión de 0.5% por transferencia <br> 
-            que podrán ser de hasta $200.000 pesos.  </p> 
-        </div> </div>
-        <button class="btn-cuenta btn-gl">Quiero ser Gold</button>
-     
+          <p>
+            Si adquiris una cuenta Gold inmediatamente obtendrás: <br />
+            Una tarjeta de crédito, una caja de ahorro en pesos y dólares,
+            <br />
+            una cuenta corriente y una chequera. Además, contarás con <br />
+            la posibilidad de retirar hasta $20.000 pesos diarios <br />
+            con una mínima comisión de 0.5% por transferencia <br />
+            que podrán ser de hasta $200.000 pesos.
+          </p>
+        </div>
+      </div>
+      <button class="btn-cuenta btn-gl">Quiero ser Gold</button>
+
       <div class="cuentaBlack div">
         <div class="text text-black">
-          <p>Adquiriendo la cuenta Black inmediatamente<br>
-              podrás obtener: Una caja de ahorro en pesos <br> 
-           y en dólares, una cuenta corriente,  5 tarjetas<br>
-            de crédito, 2 chequeras y la posibilidad <br>
-              de retirar hasta $100.000 pesos diarios, y <br>
-            transferir sin comisión y/o límite alguno. </p> 
-        </div></div>
-        <button class="btn-cuenta btn-bl">Quiero ser Black</button>
-      
+          <p>
+            Adquiriendo la cuenta Black inmediatamente<br />
+            podrás obtener: Una caja de ahorro en pesos <br />
+            y en dólares, una cuenta corriente, 5 tarjetas<br />
+            de crédito, 2 chequeras y la posibilidad <br />
+            de retirar hasta $100.000 pesos diarios, y <br />
+            transferir sin comisión y/o límite alguno.
+          </p>
+        </div>
+      </div>
+      <button class="btn-cuenta btn-bl">Quiero ser Black</button>
     </section>
-<footer class="footer">
+    <footer class="footer">
       <div class="icono">
         <a href="#"
           ><img src="../static/image/instagram.png" alt="instagram"
@@ -76,9 +85,8 @@
         Todos los derechos Reservados.
       </div>
     </footer>
-   
-    {% include "login.html" %} {% include "register.html" %} 
-    {% block barra %}{% include "barraLateral.html" %} {%endblock %}
+
+    {% include "login.html" %} {% include "register.html" %} {% block barra %}{%include "barraLateral.html" %} {%endblock %}
 
     <script src="../static/js/app.js"></script>
     <script
