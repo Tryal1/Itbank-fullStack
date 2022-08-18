@@ -109,10 +109,11 @@ def clientes(request):
 
     user = Cliente.objects.get(customer_dni=User.get_username(request.user))
     cuenta = Cuenta.objects.get(account_id=user.customer_id)
-    # ACA FALTA EL DE TARJETA    
-    print(cuenta.balance)
+    tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
+    # print(tarjeta)
     context = {
         "user": user,
         "cuenta": cuenta,
+        'tarjeta':tarjeta
     }
     return render(request, 'clientes.html' ,{'form': formLogin, 'formRegister': formRegister,'context':context})

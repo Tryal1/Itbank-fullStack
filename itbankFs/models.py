@@ -48,3 +48,4 @@ class Tarjeta(models.Model):
     expire_date = models.TextField()
     card_type = models.TextField()
     brand = models.TextField()
+    client_type = models.TextField()
