@@ -17,7 +17,7 @@
   </head>
   <body>
     {% include "header.html" %}
-    
+
     <section class="container-prestamosMain">
       <div class="prestamosMain">
         <div>
@@ -75,9 +75,12 @@
           <div class="contenedor-de-cmapos">
             <div class="campo">{{prestamos.cantidad}}</div>
             <div class="campo">{{prestamos.motivo}}</div>
+            {% comment %}
             <div class="campo">{{prestamos.dni}}</div>
+            <div class="campo">{{prestamos.pin}}</div>
+            {% endcomment %}
           </div>
-          <div class="campo">{{prestamos.pin}}</div>
+
           <div class="enviar">
             <button class="btn">Solicitar</button>
           </div>
@@ -107,10 +110,9 @@
       </div>
     </footer>
 
-    {% include "login.html" %} {% include "register.html" %} 
-    {% block barra %}{% include "barraLateral.html" %} {%endblock %}
+    {% include "login.html" %} {% include "register.html" %} {% block barra %}{%include "barraLateral.html" %} {%endblock %}
 
-   <script src="../static/js/app.js"></script>
+    <script src="../static/js/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

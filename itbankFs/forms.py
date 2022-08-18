@@ -28,7 +28,7 @@ class Prestamos(forms.Form):
                                widget=forms.TextInput(attrs={'class': 'imput-text', 'placeholder': 'Cantidad'}))
     motivo = forms.CharField(required=True, widget=forms.TextInput(
         attrs={'class': 'imput-text', 'placeholder': 'Motivo'}))
-    dni = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'class': 'imput-text', 'placeholder': 'Dni'}))
-    pin = forms.CharField(required=True, widget=forms.TextInput(
-        attrs={'class': 'imput-text', 'placeholder': 'Pin'}))
+    # dni = forms.CharField(required=True, widget=forms.TextInput(
+    #     attrs={'class': 'imput-text', 'placeholder': 'Dni'}))
+    # pin = forms.CharField(required=True, widget=forms.TextInput(
+    #     attrs={'class': 'imput-text', 'placeholder': 'Pin'}))

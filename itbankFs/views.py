@@ -18,7 +18,7 @@ formLogin = loginForm()
 formRegister = RegisterForm()
 
 
-def home(request):
+def userLogin(request):
     if request.method == 'POST':
 
         # dentro del template del form, está el nombre "register" dentro del submit del form
@@ -73,47 +73,81 @@ def home(request):
             logout(request)
             return HttpResponseRedirect('/')
 
+
+def home(request):
+    userLogin(request)
     return render(request, 'index.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def prestamos(request):
     prestamos = Prestamos()
+    userLogin(request)
+    if request.user.is_authenticated:
+        user = Cliente.objects.get(
+            customer_dni=User.get_username(request.user))
+        tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
+        match tarjeta.client_type:
+            case 'CLASSIC':
+                limit = '100000'
+            case 'GOLD':
+                limit = '300000'
+            case 'BLACK':
+                limit = '500000'
+        if request.method == 'POST':
+            cantidad = request.POST['cantidad']
+            motivo = request.POST['motivo']
+            if cantidad >= limit:
+                print('La cantidad supera el limite')
+                return HttpResponseRedirect('/prestamos')
+            else:
+                print('PASA')
+                return HttpResponseRedirect('/prestamos')
+
     return render(request, 'prestamos.html', {'form': formLogin, 'formRegister': formRegister, 'prestamos': prestamos})
 
 
 def atCliente(request):
+    userLogin(request)
     return render(request, 'atCliente.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def seguros(request):
+    userLogin(request)
     return render(request, 'seguros.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def tarjetas(request):
+    userLogin(request)
     return render(request, 'tarjetas.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def dolarHoy(request):
+    userLogin(request)
     return render(request, 'dolarHoy.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def calculadora(request):
+    userLogin(request)
     return render(request, 'calculadora.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def cuentas(request):
+    userLogin(request)
     return render(request, 'cuentas.html', {'form': formLogin, 'formRegister': formRegister})
 
 
 def clientes(request):
-
-    user = Cliente.objects.get(customer_dni=User.get_username(request.user))
-    cuenta = Cuenta.objects.get(account_id=user.customer_id)
-    tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
-    # print(tarjeta)
-    context = {
-        "user": user,
-        "cuenta": cuenta,
-        'tarjeta':tarjeta
-    }
-    return render(request, 'clientes.html' ,{'form': formLogin, 'formRegister': formRegister,'context':context})
+    userLogin(request)
+    if request.user.is_authenticated:
+        user = Cliente.objects.get(customer_dni=User.get_username(request.user))
+        cuenta = Cuenta.objects.get(account_id=user.customer_id)
+        tarjeta = Tarjeta.objects.get(customer_id=user.customer_id)
+        # print(tarjeta)
+        context = {
+            "user": user,
+            "cuenta": cuenta,
+            'tarjeta': tarjeta
+        }
+    else:
+        context = {}
+    return render(request, 'clientes.html', {'form': formLogin, 'formRegister': formRegister, 'context': context})
